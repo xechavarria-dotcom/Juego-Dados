@@ -15,7 +15,9 @@ public class Dado {
         ImageIcon imgDado = new ImageIcon(getClass().getResource(archivoImagen));
         lbl.setIcon(imgDado);
     }
-
+    public int getcara(){
+       return cara 
+   }
 }
 
 
