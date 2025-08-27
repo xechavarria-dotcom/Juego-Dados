@@ -8,6 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+private Dado dado1, dado2;
+private Random r;
+private Jlable lanzamientos, cenas, lbllanzamientos,lbcenas;
+
 public class FrmJuego extends JFrame {
 
     // Metodo constructor
@@ -38,7 +42,7 @@ public class FrmJuego extends JFrame {
         lblTituloCenas.setBounds(240 + 2 * imgDado.getIconWidth(), 40, 100, 25);
         getContentPane().add(lblTituloCenas);
 
-        JLabel lbLanzamientos = new JLabel("0");
+        lbLanzamientos = new JLabel("0");
         lbLanzamientos.setBounds(30 + 2 * imgDado.getIconWidth(), 40, 100, 100);
         lbLanzamientos.setFont(new Font("Tahoma", 1, 72));
         lbLanzamientos.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -47,7 +51,7 @@ public class FrmJuego extends JFrame {
         lbLanzamientos.setOpaque(true);
         getContentPane().add(lbLanzamientos);
 
-        JLabel lbCenas = new JLabel("0");
+        lbCenas = new JLabel("0");
         lbCenas.setBounds(140 + 2 * imgDado.getIconWidth(), 40, 100, 100);
         lbCenas.setFont(new Font("Tahoma", 1, 72));
         lbCenas.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -80,15 +84,40 @@ public class FrmJuego extends JFrame {
                 Lanzar();
             }
 
+            //Intanciar las variables dado1, dado2, r
+            dado1 = new Dado;
+            dado2 = new Dado;
+            r = new Random;
+            
+
         });
 
     }
 
     private void iniciarLanzamientos() {
+        lanzamientos = 0;
+        cenas = 0;
+        lbllanzamientos.setText(String.ValueOf(lanzamientos);
+        lbCenas.setText(String.ValueOf(cenas);
 
     }
 
     private void Lanzar() {
+        //Lanzar los dados
+        dado1.lanzar(r);
+        dado2.lanzar(r);
+
+        //Mostrar los dados
+        dado1.mostrar(lbldado1);
+        dado2.mostrar(lbldado2);
+
+        //Actualizo los contadores
+        lanzamientos++;
+        lbllanzamientos.setText(String.ValueOf(lanzamientos);
+
+        cenas++;
+        lbCenas.setText(String.ValueOf(cenas);
+            
 
     }
 }
